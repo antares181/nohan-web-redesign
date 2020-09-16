@@ -3,18 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/preset-create-react-app": "^3.1.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "classnames": "^2.2.6",
+    "popmotion": "^8.7.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-helmet-async": "^1.0.7",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -o build-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +38,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.0.21",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "babel-loader": "^8.1.0",
+    "stylelint": "^13.7.1",
+    "stylelint-config-recommended": "^3.0.0"
   }
 }
