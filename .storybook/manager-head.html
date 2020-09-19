@@ -1,0 +1,68 @@
+<!-- <script>
+  if (navigator.doNotTrack !== '1') {
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-38720984-1';
+    script.async = true;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-38720984-1');
+  }
+</script> -->
+
+<script>
+  var titleTag = document.createElement('title');
+  titleTag.text = 'Harum Shidiqi | Storybook';
+  var firstMeta = document.head.querySelector('meta[charset="utf-8"]');
+  document.head.insertBefore(titleTag, firstMeta.nextSibling);
+
+  var callback = function (mutationsList, observer) {
+    for (var mutation of mutationsList) {
+      if (mutation.type == 'childList') {
+        observer.disconnect();
+        titleTag.text = 'Harum Shidiqi | Storybook';
+      }
+    }
+  };
+
+  var observer = new MutationObserver(callback);
+  observer.observe(titleTag, {childList: true});
+</script>
+
+<style>
+  .sidebar-header img {
+    width: 32px;
+  }
+</style>
+
+<meta
+  name="description"
+  content="My custom design component system created from the ground up used in building my portfolio. Built with the help of storybook and styled-components"
+/>
+
+<meta name="theme-color" content="#111111" />
+<meta name="author" content="Harum Shidiqi" />
+
+<link rel="manifest" href="https://nohan.studio/manifest.json" />
+<link rel="shortcut icon" href="https://nohan.studio/favicon.svg" />
+<link rel="apple-touch-icon" href="https://nohan.studio/icon-256.png" />
+<link type="text/plain" rel="author" href="https://nohan.studio/humans.txt" />
+
+<!-- <meta property="og:image" content="https://hamishw.com/social-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="549">
+
+<meta property="og:title" content="Harum Shidiqi | Storybook">
+<meta property="og:site_name" content="hamishw.com">
+<meta property="og:url" content="https://hamishw.com">
+<meta property="og:description"
+  content="My custom design component system created from the ground up used in building my portfolio. Built with the help of storybook and styled-components">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description"
+  content="My custom design component system created from the ground up used in building my portfolio. Built with the help of storybook and styled-components">
+<meta name="twitter:title" content="Harum Shidiqi | Storybook">
+<meta name="twitter:site" content="@hamishMW">
+<meta name="twitter:image" content="https://hamishw.com/social-image.png"> -->

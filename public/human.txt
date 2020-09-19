@@ -1,0 +1,17 @@
+/**** ABOUT ME ****/
+
+Harum Shidiqi
+UI/UX Designer and Frontend Developer
+
+Instagram: @harum.sh
+Github: https://github.com/antares181
+
+/**** DESIGN TOOL ****/
+      Figma
+
+/**** TECHNOLOGY ****/
+      React
+      Popmotion
+
+/**** FONTS ****/
+      Metropolis
