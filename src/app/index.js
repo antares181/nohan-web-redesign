@@ -14,7 +14,7 @@ import {
 } from 'react-transition-group';
 import classNames from 'classnames';
 import {Helmet, HelmetProvider} from 'react-helmet-async';
-// import Header from 'components/Header';
+import Header from 'components/Header';
 import {theme, tokens, createThemeProperties} from 'app/theme';
 import {media, msToNum} from 'utils/style';
 import {useLocalStorage, usePrefersReducedMotion} from 'hooks';
@@ -22,7 +22,7 @@ import MetropolisLight from 'assets/fonts/Metropolis-Light.woff2';
 import MetropolisBold from 'assets/fonts/Metropolis-Bold.woff2';
 import {initialState, reducer} from 'app/reducer';
 import {reflow} from 'utils/transition';
-import prerender from 'utils/prerender';
+// import prerender from 'utils/prerender';
 import './index.css';
 
 const Home = lazy(() => import('pages/Home'));
@@ -65,9 +65,9 @@ const App = () => {
   }, [prefersReducedMotion]);
 
   useEffect(() => {
-    if (!prerender) {
-      console.info(`prerender react`);
-    }
+    // if (!prerender) {
+    //   console.info(`prerender react`);
+    // }
     window.history.scrollRestoration = 'manual';
   }, []);
 
@@ -103,7 +103,7 @@ const AppRoutes = () => {
       <a className="skip-to-main" href="#MainContent">
         Skip to main content
       </a>
-      {/* <Header location={location} /> */}
+      <Header location={location} />
       <TransitionGroup
         component="main"
         className="app"

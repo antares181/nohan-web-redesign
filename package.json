@@ -2,12 +2,16 @@
   "name": "nohan-web-redesign",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nohan.studio",
+  "description": "Portfolio site for harum Shidiqi",
+  "repository": "https://github.com/antares181/nohan-web-redesign.git",
   "devDependencies": {
     "@storybook/addon-a11y": "^6.0.21",
     "@storybook/addon-actions": "^6.0.21",
     "@storybook/addon-knobs": "^6.0.21",
     "@storybook/react": "^6.0.21",
     "babel-loader": "^8.1.0",
+    "react-snap": "^1.23.0",
     "stylelint": "^13.7.1",
     "stylelint-config-recommended": "^3.0.0"
   },
@@ -33,6 +37,11 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -o build-storybook"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true,
+    "headless": true,
+    "crawl": true
   },
   "eslintConfig": {
     "extends": "react-app"
