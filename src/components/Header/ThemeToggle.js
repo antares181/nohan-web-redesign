@@ -1,35 +1,33 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Button } from 'components/Button';
-import { useAppContext, useId } from 'hooks';
+import {Button} from 'components/Button';
+import {useAppContext, useId} from 'hooks';
 import './ThemeToggle.css';
 
-const ThemeToggle = ({ isMobile, ...rest }) => {
-  const { dispatch, theme } = useAppContext();
-  const { themeId } = theme;
+const ThemeToggle = ({isMobile, ...rest}) => {
+  const {dispatch, theme} = useAppContext();
+  const {themeId} = theme;
   const isDark = themeId === 'dark';
   const id = useId();
   const maskId = `theme-toggle-mask-${id}`;
 
   const handleClick = () => {
-    dispatch({ type: 'toggleTheme' });
+    dispatch({type: 'toggleTheme'});
   };
 
   return (
     <Button
       iconOnly
-      className={classNames('theme-toggle', { 'theme-toggle--mobile': isMobile })}
+      className={classNames('theme-toggle', {'theme-toggle--mobile': isMobile})}
       aria-label="Toggle theme"
       onClick={handleClick}
-      {...rest}
-    >
+      {...rest}>
       <svg
         aria-hidden
         className="theme-toggle__svg"
         width="38"
         height="38"
-        viewBox="0 0 38 38"
-      >
+        viewBox="0 0 38 38">
         <defs>
           <mask id={maskId}>
             <circle
@@ -38,7 +36,7 @@ const ThemeToggle = ({ isMobile, ...rest }) => {
                 'theme-toggle__circle--mask',
                 {
                   'theme-toggle__circle--dark': isDark,
-                }
+                },
               )}
               cx="19"
               cy="19"

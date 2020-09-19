@@ -13,6 +13,8 @@ import {ReactComponent as Send} from 'assets/icons/send.svg';
 import {ReactComponent as Play} from 'assets/icons/play.svg';
 import {ReactComponent as Pause} from 'assets/icons/pause.svg';
 import {ReactComponent as Figma} from 'assets/icons/figma.svg';
+import {ReactComponent as Instagram} from 'assets/icons/instagram.svg';
+import {ReactComponent as Behance} from 'assets/icons/behance.svg';
 import './index.css';
 
 export const icons = {
@@ -29,6 +31,8 @@ export const icons = {
   play: Play,
   pause: Pause,
   figma: Figma,
+  instagram: Instagram,
+  behance: Behance,
 };
 
 const Icon = ({icon, style, className, ...rest}) => {

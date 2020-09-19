@@ -82,7 +82,6 @@ function Header(props) {
             </NavLink>
           ))}
         </div>
-        <HeaderIcons />
       </nav>
       <Transition
         mountOnEnter
@@ -114,6 +113,9 @@ function Header(props) {
         )}
       </Transition>
       {!isMobile && <ThemeToggle />}
+      <div className="header__icon-container">
+        <HeaderIcons />
+      </div>
     </header>
   );
 }

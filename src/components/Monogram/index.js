@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { useId } from 'hooks';
+import {useId} from 'hooks';
 import './index.css';
 
-function Monogram({ highlight, className, ...props }) {
+function Monogram({highlight, className, ...props}) {
   const id = useId();
   const clipId = `monogram-clip-${id}`;
 
@@ -11,14 +11,13 @@ function Monogram({ highlight, className, ...props }) {
     <svg
       aria-hidden
       className={classNames('monogram', className)}
-      width="46"
-      height="29"
-      viewBox="0 0 46 29"
-      {...props}
-    >
+      width="30"
+      height="37"
+      viewBox="0 0 30 37"
+      {...props}>
       <defs>
         <clipPath id={clipId}>
-          <path d="M16.525 28.462l7.18-18.35.003-.001 9.72 18.442a.838.838 0 001.524-.093l3.39-8.824a.846.846 0 00-.04-.686L30.307 3.605A6.698 6.698 0 0024.367 0h-4.6a.84.84 0 00-.74 1.23l3.63 6.887-3.655 9.15-7.12-13.662A6.698 6.698 0 005.942 0h-4.6a.842.842 0 00-.748 1.23L15 28.554a.839.839 0 001.524-.092zM42.392 8.806a.835.835 0 00.387-.446v.001l2.67-7.23a.838.838 0 00-.785-1.129h-6.578a.837.837 0 00-.736 1.238l3.907 7.226c.22.41.729.56 1.135.34z" />
+          <path d="M14.9473 9.83334L30 0.519989V37.48H29.9729L14.962 28.1925L0.0269821 37.4641H0V0.554161L14.9473 9.83334ZM14.9293 13.0548L5.16509 7.06852V7.07024L2.94233 5.69038V32.3446L10.9236 27.3899L14.9293 24.9612V13.0548Z" />
         </clipPath>
       </defs>
       <rect clipPath={`url(#${clipId})`} width="100%" height="100%" />

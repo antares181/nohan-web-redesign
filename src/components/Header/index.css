@@ -60,7 +60,8 @@
   flex: 1 1 auto;
   max-width: var(--space2XL);
   position: relative;
-  top: calc(var(--spaceM) * -1);
+  top: 0;
+  /* top: calc(var(--spaceM) * -1); */
 }
 
 @media (max-width: 696px), (max-height: 696px) {
@@ -73,6 +74,8 @@
   transform: rotate(-90deg) translate3d(-50%, 0, 0);
   display: flex;
   flex-direction: row-reverse;
+  position: absolute;
+  bottom: 300px;
 }
 
 .header__nav-link {
@@ -282,4 +285,10 @@
 
 .header__mobile-nav-link:active {
   box-shadow: none;
+}
+
+.header__icon-container {
+  position: fixed;
+  bottom: var(--spaceOuter);
+  right: var(--spaceOuter);
 }
