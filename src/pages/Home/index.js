@@ -3,9 +3,9 @@ import {Helmet} from 'react-helmet-async';
 import Intro from 'pages/Home/Intro';
 import {usePrefersReducedMotion, useRouteTransition} from 'hooks';
 import {useLocation} from 'react-router-dom';
-import MyFoodDiary from 'assets/projects/my-food-diary.png';
+// import MyFoodDiary from 'assets/projects/my-food-diary.png';
 import MyFoodDiaryLarge from 'assets/projects/my-food-diary-large.png';
-import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
+// import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
 import ProjectSummary from 'pages/Home/ProjectSummary';
 import {media} from 'utils/style';
 

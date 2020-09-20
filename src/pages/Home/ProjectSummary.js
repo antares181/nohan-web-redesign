@@ -7,8 +7,8 @@ import {Button} from 'components/Button';
 import Image from 'components/Image';
 // import Model from 'components/Model';
 // import Divider from 'components/Divider';
-import {useWindowSize, useAppContext} from 'hooks';
-import {reflow, isVisible} from 'utils/transition';
+import {useWindowSize} from 'hooks';
+import {reflow} from 'utils/transition';
 import {media} from 'utils/style';
 import './ProjectSummary.css';
 
@@ -27,7 +27,7 @@ const ProjectSummary = ({
   image,
   ...rest
 }) => {
-  const {theme} = useAppContext();
+  // const {theme} = useAppContext();
   const {width} = useWindowSize();
   const titleId = `${id}-title`;
   const isMobile = width <= media.tablet;

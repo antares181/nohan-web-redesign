@@ -1,8 +1,8 @@
-import React, {Suspense, lazy, useEffect, useState, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import classNames from 'classnames';
-import {TransitionGroup, Transition} from 'react-transition-group';
+import {Transition} from 'react-transition-group';
 // import DecoderText from 'components/DecoderText';
-import {useInterval, usePrevious, useWindowSize, useAppContext} from 'hooks';
+import {useWindowSize, useAppContext} from 'hooks';
 import {reflow} from 'utils/transition';
 import prerender from 'utils/prerender';
 import {media} from 'utils/style';

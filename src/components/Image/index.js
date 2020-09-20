@@ -87,7 +87,6 @@ const ImageElements = ({
     const {width, height} = placeholderRef.current;
 
     if (width && height) {
-      console.info(width, height);
       setPlaceholderSize({width, height});
     }
   }, []);

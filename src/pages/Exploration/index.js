@@ -29,7 +29,6 @@ import {media} from 'utils/style';
 import './index.css';
 
 export default function index() {
-  console.info(media.mobile);
   return (
     <Fragment>
       <Helmet>
