@@ -67,14 +67,14 @@ function Intro({id, sectionRef, disciplines, scrollIndicatorHidden, ...rest}) {
                       `intro__title-word--${status}`,
                     )}
                     style={{'--delay': tokens.base.durationM}}>
-                    & Developer
+                    &amp; Developer
                   </span>
                 </span>
               </h2>
             </header>
 
-            {/* <div className="background background__left"></div>
-            <div className="background background__right"></div> */}
+            <div className="background background__left"></div>
+            <div className="background background__right"></div>
 
             {windowSize.width > media.tablet && (
               <div

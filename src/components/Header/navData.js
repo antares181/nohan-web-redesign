@@ -2,17 +2,13 @@ export const navLinks = [
   {
     label: 'Explorations',
     pathname: '/explorations',
-    // hash: '#project-1',
+    hash: '#exploration',
   },
   {
     label: 'Projects',
-    pathname: '/projects',
-    // hash: '#details',
+    pathname: '/',
+    hash: '#project',
   },
-  // {
-  //   label: 'Articles',
-  //   pathname: '/articles',
-  // },
   {
     label: 'Contact',
     pathname: '/contact',

@@ -46,6 +46,7 @@
 
 .theme-toggle__circle--dark {
   transform: none;
+  fill: white;
   transition-delay: 0.3s;
 }
 

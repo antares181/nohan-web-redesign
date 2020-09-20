@@ -15,6 +15,8 @@ import {ReactComponent as Pause} from 'assets/icons/pause.svg';
 import {ReactComponent as Figma} from 'assets/icons/figma.svg';
 import {ReactComponent as Instagram} from 'assets/icons/instagram.svg';
 import {ReactComponent as Behance} from 'assets/icons/behance.svg';
+import {ReactComponent as ThemeMoon} from 'assets/icons/theme-moon.svg';
+import {ReactComponent as ThemeSun} from 'assets/icons/theme-sun.svg';
 import './index.css';
 
 export const icons = {
@@ -33,6 +35,8 @@ export const icons = {
   figma: Figma,
   instagram: Instagram,
   behance: Behance,
+  moon: ThemeMoon,
+  sun: ThemeSun,
 };
 
 const Icon = ({icon, style, className, ...rest}) => {

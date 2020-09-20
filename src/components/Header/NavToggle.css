@@ -14,6 +14,11 @@
   .nav-toggle {
     display: flex;
   }
+  .preoggle__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .nav-toggle__inner {

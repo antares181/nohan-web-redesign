@@ -3,6 +3,11 @@ import {Helmet} from 'react-helmet-async';
 import Intro from 'pages/Home/Intro';
 import {usePrefersReducedMotion, useRouteTransition} from 'hooks';
 import {useLocation} from 'react-router-dom';
+import MyFoodDiary from 'assets/projects/my-food-diary.png';
+import MyFoodDiaryLarge from 'assets/projects/my-food-diary-large.png';
+import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
+import ProjectSummary from 'pages/Home/ProjectSummary';
+import {media} from 'utils/style';
 
 const disciplines = [
   'Developer',
@@ -19,10 +24,11 @@ export default function Home() {
   const [visibleSections, setVisibleSections] = useState([]);
   const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
+  const projectOne = useRef();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    const revealSections = [intro];
+    const revealSections = [intro, projectOne];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -66,7 +72,7 @@ export default function Home() {
 
     const handleHashchange = (hash, scroll) => {
       clearTimeout(scrollTimeout);
-      const hashSections = [intro];
+      const hashSections = [intro, projectOne];
       const hashString = hash.replace('#', '');
       const element = hashSections.filter(
         (item) => item.current.id === hashString,
@@ -132,11 +138,31 @@ export default function Home() {
           apps with a focus on motion and user experience design."
         />
       </Helmet>
+
       <Intro
         id="intro"
         sectionRef={intro}
         disciplines={disciplines}
         scrollIndicatorHidden={scrollIndicatorHidden}
+      />
+
+      <ProjectSummary
+        alternate
+        id="project"
+        sectionRef={projectOne}
+        visible={visibleSections.includes(projectOne.current)}
+        index={1}
+        title="My Food Diary to track what you eat everyday."
+        description="My Food Diary will help to track your daily food consumption with easy way."
+        buttonText="View App"
+        buttonLink="https://play.google.com/store/apps/details?id=com.myfooddiary&hl=en"
+        // buttonTo="/projects/smart-sparrow"
+        image={{
+          srcSet: `${MyFoodDiaryLarge} 1000w, ${MyFoodDiaryLarge} 1920w`,
+          placeholder: {MyFoodDiaryLarge},
+          alt: 'The Slice web appication showing a selected user annotation.',
+          sizes: `(max-width: ${media.mobile}px) 200w, (max-width: ${media.tablet}px) 90vw, 80vw`,
+        }}
       />
     </Fragment>
   );

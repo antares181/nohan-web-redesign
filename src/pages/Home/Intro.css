@@ -48,6 +48,17 @@
   font-weight: var(--fontWeightMedium);
   line-height: 1;
   opacity: 0;
+  display: inline-block;
+}
+
+.intro__name::after {
+  content: '';
+  position: absolute;
+  right: 50%;
+  top: 8px;
+  width: 100px;
+  height: 7px;
+  background: rgb(var(--rgbAccent));
 }
 
 .intro__name--entering {
@@ -78,6 +89,10 @@
     letter-spacing: 0.2em;
     white-space: nowrap;
     overflow: hidden;
+  }
+  .intro__name::after {
+    display: none;
+    opacity: 0;
   }
 }
 
@@ -298,7 +313,7 @@
 .intro__scroll-indicator {
   border: 2px solid rgb(var(--rgbText) / 0.4);
   border-radius: 20px;
-  width: 26px;
+  width: 38px;
   height: 38px;
   position: fixed;
   bottom: 64px;
@@ -325,11 +340,24 @@
   background: rgb(var(--rgbText) / 0.4);
   border-radius: 4px;
   position: absolute;
-  top: 6px;
+  top: 10px;
   left: 50%;
   transform: translateX(-1px);
   animation: intro-scroll-indicator 2s ease infinite;
 }
+
+/* .intro__scroll-indicator::after {
+  content: '';
+  height: 7px;
+  width: 2px;
+  background: rgb(var(--rgbText) / 0.4);
+  border-radius: 4px;
+  position: absolute;
+  top: 6px;
+  left: 70%;
+  transform: translateX(-1px);
+  animation: intro-scroll-indicator 2s ease infinite;
+} */
 
 @media (max-width: 820px) and (max-height: 420px) {
   .intro__scroll-indicator {
@@ -373,27 +401,6 @@
 
 .intro__mobile-scroll-indicator svg {
   stroke: rgb(var(--rgbText) / 0.5);
-}
-
-.background {
-  border-radius: 100%;
-  border: 1px solid rgb(var(--rgbText) / 0.05);
-  position: absolute;
-  overflow: hidden;
-}
-
-.background__left {
-  width: var(--maxWidthM);
-  height: var(--maxWidthM);
-  top: -40%;
-  left: -12%;
-}
-
-.background__right {
-  width: var(--maxWidthL);
-  height: var(--maxWidthL);
-  top: 40%;
-  right: -20%;
 }
 
 @media (max-width: 820px) and (max-height: 420px) {

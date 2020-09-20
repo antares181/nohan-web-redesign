@@ -33,7 +33,7 @@
   transition-property: transform, opacity, background;
   transition-duration: var(--durationM);
   transition-timing-function: var(--bezierFastoutSlowin);
-  background: rgb(var(--rgbPrimary));
+  background: rgb(var(--rgbAccent));
   position: absolute;
   top: 0;
   right: 0;
@@ -56,6 +56,7 @@
   --buttonSpace: 10px;
   --buttonTextColor: rgb(var(--rgbPrimary));
 
+  color: rgb(var(--rgbAccent));
   background: none;
   padding-left: var(--buttonSpace);
   padding-right: var(--buttonSpace);
@@ -73,7 +74,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgb(var(--rgbPrimary) / 0.2);
+  /* background-color: rgb(var(--rgbPrimary) / 0.2); */
   transform: scale3d(0, 1, 1);
   transform-origin: right;
   transition: transform var(--durationM) var(--bezierFastoutSlowin);
@@ -86,8 +87,8 @@
 }
 
 .button--secondary:hover::after {
-  transform: scale3d(1, 1, 1);
-  transform-origin: left;
+  /* transform: scale3d(1, 1, 1);
+  transform-origin: left; */
 }
 
 .button--loading {

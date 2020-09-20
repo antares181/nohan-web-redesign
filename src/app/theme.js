@@ -95,7 +95,7 @@ const dark = {
 
 const light = {
   themeId: 'light',
-  rgbBackground: '242 242 242',
+  rgbBackground: '255 255 255',
   rgbBackgroundLight: '255 255 255',
   rgbPrimary: '0 0 0',
   rgbAccent: '32 203 162',

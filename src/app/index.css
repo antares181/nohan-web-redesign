@@ -109,6 +109,34 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgb(var(--rgbPrimary));
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
   z-index: -1;
+}
+
+.background {
+  border-radius: 100%;
+  border: 2px solid rgb(var(--rgbText) / 0.05);
+  position: fixed;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background__left {
+  width: var(--maxWidthM);
+  height: var(--maxWidthM);
+  top: -40%;
+  left: -12%;
+}
+
+.background__right {
+  width: var(--maxWidthL);
+  height: var(--maxWidthL);
+  top: 40%;
+  right: -20%;
 }
