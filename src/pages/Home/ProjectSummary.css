@@ -102,6 +102,10 @@
   width: 100%;
 }
 
+.project-summary__preview img {
+  min-width: 280px !important;
+}
+
 .project-summary__model {
   --width: 180%;
   --aspectRatio: 10 / 12;

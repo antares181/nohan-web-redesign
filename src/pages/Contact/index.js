@@ -33,14 +33,14 @@ const ProfileText = ({status, titleId}) => (
         `profile__description--${status}`,
       )}>
       I’m Harum, currently I live in Semarang, Indonesia. My projects include
-      UX/UI design and Frontend development on web or mobile.
+      UX/UI design and Frontend development for web or mobile.
     </p>
     <p
       className={classNames(
         'profile__description',
         `profile__description--${status}`,
       )}>
-      Feel free to contact me at <b>harumshidiqi@gmail.com</b> or my social
+      Feel free to contact me at <b>harumshidiqi@gmail.com</b> or from my social
       media.
     </p>
   </Fragment>

@@ -1,8 +1,13 @@
 export const navLinks = [
   {
+    label: 'Resources',
+    pathname: '/resources',
+    // hash: '#exploration',
+  },
+  {
     label: 'Explorations',
     pathname: '/explorations',
-    hash: '#exploration',
+    // hash: '#exploration',
   },
   {
     label: 'Projects',

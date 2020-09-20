@@ -40,10 +40,6 @@ export default function index() {
         />
       </Helmet>
       <Section
-        className={classNames('project-summary', {
-          'project-summary--alternate': false,
-          'project-summary--first': index === '01',
-        })}
         as="section"
         aria-labelledby="exploration"
         id="exploration"

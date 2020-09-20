@@ -57,12 +57,14 @@
   grid-column-gap: 8%;
   max-width: var(--maxWidthL);
   width: 100%;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
   .profile__content {
     max-width: 600px;
     grid-template-columns: 100%;
+    align-items: flex-start;
   }
 }
 
@@ -134,6 +136,7 @@
 }
 
 .profile__image-wrapper {
+  padding: 30px;
   position: relative;
   max-width: 100%;
 }
@@ -170,8 +173,7 @@
 }
 
 b {
-  color: #000;
-  padding: 10px;
-  background: rgb(var(--rgbAccent));
+  color: rgb(var(--rgbAccent));
+  font-weight: 700;
   line-height: 2.7;
 }

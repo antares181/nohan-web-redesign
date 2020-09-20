@@ -5,7 +5,7 @@ import {usePrefersReducedMotion, useRouteTransition} from 'hooks';
 import {useLocation} from 'react-router-dom';
 // import MyFoodDiary from 'assets/projects/my-food-diary.png';
 import MyFoodDiaryLarge from 'assets/projects/my-food-diary-large.png';
-// import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
+import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
 import ProjectSummary from 'pages/Home/ProjectSummary';
 import {media} from 'utils/style';
 
@@ -152,14 +152,14 @@ export default function Home() {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="My Food Diary to track what you eat everyday."
+        title="Food Diary to track what you eat everyday."
         description="My Food Diary will help to track your daily food consumption with easy way."
         buttonText="View App"
         buttonLink="https://play.google.com/store/apps/details?id=com.myfooddiary&hl=en"
         // buttonTo="/projects/smart-sparrow"
         image={{
-          srcSet: `${MyFoodDiaryLarge} 1000w, ${MyFoodDiaryLarge} 1920w`,
-          placeholder: {MyFoodDiaryLarge},
+          srcSet: `${MyFoodDiaryLarge} 700w, ${MyFoodDiaryLarge} 1920w`,
+          placeholder: {MyFoodDiaryPlaceholder},
           alt: 'The Slice web appication showing a selected user annotation.',
           sizes: `(max-width: ${media.mobile}px) 200w, (max-width: ${media.tablet}px) 90vw, 80vw`,
         }}

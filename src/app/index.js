@@ -30,6 +30,7 @@ const Contact = lazy(() => import('pages/Contact'));
 const Project = lazy(() => import('pages/Project'));
 const Exploration = lazy(() => import('pages/Exploration'));
 const Page404 = lazy(() => import('pages/404'));
+const Resource = lazy(() => import('pages/Resource'));
 
 export const AppContext = createContext();
 export const TransitionContext = createContext();
@@ -122,6 +123,7 @@ const AppRoutes = () => {
                     <Route path="/contact" component={Contact} />
                     <Route path="/projects" component={Project} />
                     <Route path="/explorations" component={Exploration} />
+                    <Route path="/resources" component={Resource} />
                     <Route component={Page404} />
                   </Switch>
                 </Suspense>

@@ -1,7 +1,9 @@
 .exploration-wrapper {
   width: 100%;
-  margin-top: 80px;
+  margin-top: 120px;
   margin-bottom: 80px;
+  /* position: relative;
+  top: 0; */
   /* max-width: var(--maxWidthL);
   align-items: center;
   justify-content: center;
@@ -23,7 +25,6 @@
 }
 
 .exploration__image {
-  padding: 20px;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -34,9 +35,9 @@
   height: 400px;
 }
 
-@media (max-width: 1024px) {
-  .exploration {
-    /* display: flex; */
+@media (min-width: 1024px) {
+  .exploration__image {
+    padding: 20px;
   }
 }
 
