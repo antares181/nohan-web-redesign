@@ -43,9 +43,8 @@ const ProfileText = ({status, titleId}) => (
         'profile__description',
         `profile__description--${status}`,
       )}>
-      In my spare time I like to practice Badminton and play video games. I’m
-      always down for hearing about new projects, so feel free to contact me at{' '}
-      <b>harumshidiqi@gmail.com</b> or my social media.
+      Feel free to contact me at <b>harumshidiqi@gmail.com</b> or my social
+      media.
     </p>
   </Fragment>
 );
