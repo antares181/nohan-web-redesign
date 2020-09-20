@@ -54,9 +54,27 @@ export default function index() {
             <Image
               reveal
               className="exploration__image"
-              delay={100}
-              placeholder={PodcastPlaceholder}
-              srcSet={`${Podcast} 400w, ${PodcastLarge} 1080w`}
+              delay={700}
+              placeholder={CulturePlaceholder}
+              srcSet={`${Culture} 400w, ${CultureLarge} 1080w`}
+              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
+              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
+            />
+            <Image
+              reveal
+              className="exploration__image"
+              delay={600}
+              placeholder={FileManagerPlaceholder}
+              srcSet={`${FileManager} 400w, ${FileManagerLarge} 1080w`}
+              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
+              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
+            />
+            <Image
+              reveal
+              className="exploration__image"
+              delay={500}
+              placeholder={SmartHomePlaceholder}
+              srcSet={`${SmartHome} 400w, ${SmartHomeLarge} 1080w`}
               sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
               alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
             />
@@ -81,36 +99,18 @@ export default function index() {
             <Image
               reveal
               className="exploration__image"
+              delay={100}
+              placeholder={PodcastPlaceholder}
+              srcSet={`${Podcast} 400w, ${PodcastLarge} 1080w`}
+              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
+              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
+            />
+            <Image
+              reveal
+              className="exploration__image"
               delay={400}
               placeholder={SepatoPlaceholder}
               srcSet={`${Sepato} 400w, ${SepatoLarge} 1080w`}
-              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
-              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
-            />
-            <Image
-              reveal
-              className="exploration__image"
-              delay={500}
-              placeholder={SmartHomePlaceholder}
-              srcSet={`${SmartHome} 400w, ${SmartHomeLarge} 1080w`}
-              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
-              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
-            />
-            <Image
-              reveal
-              className="exploration__image"
-              delay={600}
-              placeholder={FileManagerPlaceholder}
-              srcSet={`${FileManager} 400w, ${FileManagerLarge} 1080w`}
-              sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
-              alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
-            />
-            <Image
-              reveal
-              className="exploration__image"
-              delay={700}
-              placeholder={CulturePlaceholder}
-              srcSet={`${Culture} 400w, ${CultureLarge} 1080w`}
               sizes={`(max-width: ${media.mobile}px) 80vw, 100vw`}
               alt="Me at the Torii (gate) on Miyajima, an island off the coast of Hiroshima in Japan"
             />
