@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import {Helmet} from 'react-helmet-async';
-import classNames from 'classnames';
 import Section from 'components/Section';
 import PodcastPlaceholder from 'assets/projects/01-podcast-small.png';
 import PodcastLarge from 'assets/projects/01-podcast-large.png';

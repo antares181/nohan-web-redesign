@@ -4,18 +4,14 @@ import Intro from 'pages/Home/Intro';
 import {usePrefersReducedMotion, useRouteTransition} from 'hooks';
 import {useLocation} from 'react-router-dom';
 // import MyFoodDiary from 'assets/projects/my-food-diary.png';
-import MyFoodDiaryLarge from 'assets/projects/my-food-diary-large.png';
+import MyFoodDiary1x from 'assets/projects/my-food-diary1x.png';
+import MyFoodDiary2x from 'assets/projects/my-food-diary2x.png';
+import MyFoodDiary3x from 'assets/projects/my-food-diary3x.png';
 import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
 import ProjectSummary from 'pages/Home/ProjectSummary';
-import {media} from 'utils/style';
+// import {media} from 'utils/style';
 
-const disciplines = [
-  'Developer',
-  'Prototyper',
-  'Animator',
-  'Illustrator',
-  'Modder',
-];
+const disciplines = ['Developer'];
 
 export default function Home() {
   const {status} = useRouteTransition();
@@ -147,7 +143,7 @@ export default function Home() {
       />
 
       <ProjectSummary
-        alternate
+        alternate={false}
         id="project"
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
@@ -158,10 +154,10 @@ export default function Home() {
         buttonLink="https://play.google.com/store/apps/details?id=com.myfooddiary&hl=en"
         // buttonTo="/projects/smart-sparrow"
         image={{
-          srcSet: `${MyFoodDiaryLarge} 700w, ${MyFoodDiaryLarge} 1920w`,
+          srcSet: `${MyFoodDiary1x} 320w, ${MyFoodDiary2x} 520w, ${MyFoodDiary3x} 720w`,
           placeholder: {MyFoodDiaryPlaceholder},
           alt: 'The Slice web appication showing a selected user annotation.',
-          sizes: `(max-width: ${media.mobile}px) 200w, (max-width: ${media.tablet}px) 90vw, 80vw`,
+          sizes: `(min-width: 720px) 50vh, (min-width: 520px) 80vw, (min-width: 320) 40vw, 100vw`,
         }}
       />
     </Fragment>

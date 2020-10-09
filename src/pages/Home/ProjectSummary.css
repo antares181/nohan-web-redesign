@@ -46,12 +46,12 @@
   align-items: center;
   justify-content: center;
   display: grid;
-  grid-template-columns: 43% 55%;
-  grid-column-gap: 2%;
+  grid-template-columns: 45% 55%;
+  grid-column-gap: 10%;
 }
 
 .project-summary--alternate .project-summary__content {
-  grid-template-columns: 55% 40%;
+  grid-template-columns: 40% 50%;
 }
 
 @media (max-width: 1245px) {
@@ -104,6 +104,7 @@
 
 .project-summary__preview img {
   min-width: 280px !important;
+  width: 100%;
 }
 
 .project-summary__model {

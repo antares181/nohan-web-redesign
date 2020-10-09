@@ -1,91 +1,151 @@
-import React, {Fragment} from 'react';
-import classNames from 'classnames';
-import {Transition} from 'react-transition-group';
-// import DecoderText from 'components/DecoderText';
-import {useWindowSize, useAppContext} from 'hooks';
-import {reflow} from 'utils/transition';
-import prerender from 'utils/prerender';
-import {media} from 'utils/style';
-import {ReactComponent as ArrowDown} from 'assets/icons/arrow-down.svg';
-import {tokens} from 'app/theme';
-import Section from 'components/Section';
-import './index.css';
+import React, {useState, useEffect, useRef, Fragment} from 'react';
+import {Helmet} from 'react-helmet-async';
+import {usePrefersReducedMotion, useRouteTransition} from 'hooks';
+import {useLocation} from 'react-router-dom';
+// import MyFoodDiary from 'assets/projects/my-food-diary.png';
+import ECommerce1x from 'assets/projects/e-commerce1x.png';
+import ECommerce2x from 'assets/projects/e-commerce2x.png';
+import ECommerce3x from 'assets/projects/e-commerce3x.png';
+import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
+import ProjectSummary from 'pages/Home/ProjectSummary';
 
-function Resource({
-  id,
-  sectionRef,
-  disciplines,
-  scrollIndicatorHidden,
-  ...rest
-}) {
-  const {theme} = useAppContext();
-  const windowSize = useWindowSize();
-  const titleId = `${id}-title`;
+export default function Resource() {
+  const {status} = useRouteTransition();
+  const {hash, state} = useLocation();
+  const initHash = useRef(true);
+  const [visibleSections, setVisibleSections] = useState([]);
+  const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
+  const projectOne = useRef();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  useEffect(() => {
+    const revealSections = [projectOne];
+
+    const sectionObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const section = entry.target;
+            observer.unobserve(section);
+            if (visibleSections.includes(section)) return;
+            setVisibleSections((prevSections) => [...prevSections, section]);
+          }
+        });
+      },
+      {rootMargin: '0px 0px -10% 0px'},
+    );
+
+    const indicatorObserver = new IntersectionObserver(
+      ([entry]) => {
+        setScrollIndicatorHidden(!entry.isIntersecting);
+      },
+      {rootMargin: '-100% 0px 0px 0px'},
+    );
+
+    revealSections.forEach((section) => {
+      sectionObserver.observe(section.current);
+    });
+
+    return () => {
+      sectionObserver.disconnect();
+      indicatorObserver.disconnect();
+    };
+  }, [visibleSections]);
+
+  useEffect(() => {
+    const hasEntered = status === 'entered';
+    const supportsNativeSmoothScroll =
+      'scrollBehavior' in document.documentElement.style;
+    let scrollObserver;
+    let scrollTimeout;
+
+    const handleHashchange = (hash, scroll) => {
+      clearTimeout(scrollTimeout);
+      const hashSections = [projectOne];
+      const hashString = hash.replace('#', '');
+      const element = hashSections.filter(
+        (item) => item.current.id === hashString,
+      )[0];
+      if (!element) return;
+      const behavior = scroll && !prefersReducedMotion ? 'smooth' : 'instant';
+      const top = element.current.offsetTop;
+
+      scrollObserver = new IntersectionObserver(
+        (entries, observer) => {
+          const [entry] = entries;
+          if (entry.isIntersecting) {
+            scrollTimeout = setTimeout(
+              () => {
+                element.current.focus();
+              },
+              prefersReducedMotion ? 0 : 400,
+            );
+            observer.unobserve(entry.target);
+          }
+        },
+        {rootMargin: '-20% 0px -20% 0px'},
+      );
+
+      scrollObserver.observe(element.current);
+
+      if (supportsNativeSmoothScroll) {
+        window.scroll({
+          top,
+          left: 0,
+          behavior,
+        });
+      } else {
+        window.scrollTo(0, top);
+      }
+    };
+
+    if (hash && initHash.current && hasEntered) {
+      handleHashchange(hash, false);
+      initHash.current = false;
+    } else if (!hash && initHash.current && hasEntered) {
+      window.scrollTo(0, 0);
+      initHash.current = false;
+    } else if (hasEntered) {
+      handleHashchange(hash, true);
+    }
+
+    return () => {
+      clearTimeout(scrollTimeout);
+      if (scrollObserver) {
+        scrollObserver.disconnect();
+      }
+    };
+  }, [hash, state, prefersReducedMotion, status]);
 
   return (
-    <Section
-      className={classNames('intro', `intro__${theme.themeId}`)}
-      as="section"
-      ref={sectionRef}
-      id={id}
-      aria-labelledby={titleId}
-      tabIndex={-1}
-      {...rest}>
-      <Transition
-        key={theme.themeId}
-        appear={!prerender}
-        in={!prerender}
-        timeout={3000}
-        onEnter={reflow}>
-        {(status) => (
-          <Fragment>
-            <header className="intro__text">
-              <h1
-                className={classNames('intro__name', `intro__name--${status}`)}
-                id={titleId}>
-                in progress
-              </h1>
-              <h2 className="intro__title">
-                <span
-                  aria-hidden
-                  className={classNames('intro__title-row', {
-                    'intro__title-row--hidden': prerender,
-                  })}>
-                  <span
-                    className={classNames(
-                      'intro__title-word',
-                      `intro__title-word--${status}`,
-                    )}
-                    style={{'--delay': tokens.base.durationXS}}>
-                    Coming
-                  </span>
-                </span>
-              </h2>
-              <h2 className="intro__title">
-                <span
-                  aria-hidden
-                  className={classNames('intro__title-row', {
-                    'intro__title-row--hidden': prerender,
-                  })}>
-                  <span
-                    className={classNames(
-                      'intro__title-word',
-                      `intro__title-word--${status}`,
-                    )}
-                    style={{'--delay': tokens.base.durationM}}>
-                    Soon
-                  </span>
-                </span>
-              </h2>
-            </header>
+    <Fragment>
+      <Helmet>
+        <title>Harum Shidiqi | Designer + Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Harum Shidiqi – a digital designer working on web &amp; mobile
+          apps with a focus on motion and user experience design."
+        />
+      </Helmet>
 
-            <div className="background background__left"></div>
-            <div className="background background__right"></div>
-          </Fragment>
-        )}
-      </Transition>
-    </Section>
+      <ProjectSummary
+        alternate
+        id="project"
+        sectionRef={projectOne}
+        visible={true}
+        index={1}
+        title="Free E-Commerce UI Kit"
+        description="This is free UI Kit for e-commerce. I hope it’s helpful."
+        buttonText="Download Now"
+        buttonLink="bit.ly/FreebiesUIKit"
+        // buttonTo="/projects/smart-sparrow"
+        image={{
+          srcSet: `${ECommerce1x} 320w, ${ECommerce2x} 520w, ${ECommerce3x} 720w`,
+          placeholder: {MyFoodDiaryPlaceholder},
+          alt: 'This is free UI Kit for e-commerce. I hope it’s helpful.',
+          sizes: `(min-width: 720px) 50vh, (min-width: 520px) 80vw, (min-width: 320) 40vw, 100vw`,
+        }}
+      />
+    </Fragment>
   );
 }
-
-export default Resource;
