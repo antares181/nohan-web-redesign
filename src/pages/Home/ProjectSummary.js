@@ -25,6 +25,8 @@ const ProjectSummary = ({
   buttonTo,
   alternate,
   image,
+  caseStudyButtonText,
+  caseStudyLink,
   ...rest
 }) => {
   // const {theme} = useAppContext();
@@ -70,6 +72,17 @@ const ProjectSummary = ({
           'project-summary__button',
           `project-summary__button--${status}`,
         )}>
+        {caseStudyLink && (
+          <Button
+            secondary
+            iconHoverShift
+            as="a"
+            href={caseStudyLink}
+            target="_blank"
+            iconEnd="arrowRight">
+            {caseStudyButtonText}
+          </Button>
+        )}
         {buttonLink && (
           <Button
             secondary

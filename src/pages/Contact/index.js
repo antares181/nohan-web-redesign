@@ -79,17 +79,15 @@ const Profile = () => {
               }
               <div className="profile__column">
                 <ProfileText status={status} titleId={titleId} />
-                <a
-                  className={classNames(
-                    'button',
-                    'profile__button',
-                    `profile__button--${status}`,
-                  )}
-                  href="./CV - Harum Shidiqi v1.pdf"
+                <Button
+                  secondary
+                  iconHoverShift
+                  as="a"
+                  href='./CV - Harum Shidiqi v1.pdf'
                   target="_blank"
-                >
+                  iconEnd="arrowRight">
                   Download My CV
-                </a>
+                </Button>
               </div>
             </div>
           );

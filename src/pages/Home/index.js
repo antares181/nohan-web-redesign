@@ -152,6 +152,8 @@ export default function Home() {
         description="My Food Diary will help to track your daily food consumption with easy way."
         buttonText="View App"
         buttonLink="https://play.google.com/store/apps/details?id=com.myfooddiary&hl=en"
+        caseStudyButtonText="View Case Study"
+        caseStudyLink="https://www.behance.net/gallery/105442393/My-Food-Diary-Mobile-UI-App-for-managing-your-diet"
         // buttonTo="/projects/smart-sparrow"
         image={{
           srcSet: `${MyFoodDiary1x} 320w, ${MyFoodDiary2x} 520w, ${MyFoodDiary3x} 720w`,
