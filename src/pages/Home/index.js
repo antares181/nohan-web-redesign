@@ -9,7 +9,7 @@ import MyFoodDiary2x from 'assets/projects/my-food-diary2x.png';
 import MyFoodDiary3x from 'assets/projects/my-food-diary3x.png';
 import MyFoodDiaryPlaceholder from 'assets/projects/my-food-diary-placeholder.png';
 import ProjectSummary from 'pages/Home/ProjectSummary';
-// import {media} from 'utils/style';
+import Profile from 'pages/Contact';
 
 const disciplines = ['Developer'];
 
@@ -160,6 +160,9 @@ export default function Home() {
           sizes: `(min-width: 720px) 50vh, (min-width: 520px) 80vw, (min-width: 320) 40vw, 100vw`,
         }}
       />
+
+      <Profile/>
+
     </Fragment>
   );
 }

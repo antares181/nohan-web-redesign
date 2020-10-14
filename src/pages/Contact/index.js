@@ -10,6 +10,8 @@ import ProfileImgPlaceholder from 'assets/profile-placeholder.png';
 import {reflow} from 'utils/transition';
 import {media} from 'utils/style';
 import './index.css';
+import {Button} from 'components/Button';
+import {Link} from 'components/Link';
 
 const ProfileText = ({status, titleId}) => (
   <Fragment>
@@ -77,17 +79,17 @@ const Profile = () => {
               }
               <div className="profile__column">
                 <ProfileText status={status} titleId={titleId} />
-                {/* <Button
+                <a
                   className={classNames(
+                    'button',
                     'profile__button',
                     `profile__button--${status}`,
                   )}
-                  as={Link}
-                  status={status}
-                  to="/contact"
-                  icon="send">
-                  Send me a message
-                </Button> */}
+                  href="./CV - Harum Shidiqi v1.pdf"
+                  target="_blank"
+                >
+                  Download My CV
+                </a>
               </div>
             </div>
           );

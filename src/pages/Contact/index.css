@@ -75,6 +75,7 @@
   align-items: flex-start;
   margin-bottom: 0px;
   transform: translate3d(0, 0, 0);
+  z-index: 100;
 }
 
 .profile__title {
