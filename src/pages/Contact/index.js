@@ -34,7 +34,7 @@ const ProfileText = ({status, titleId}) => (
         'profile__description',
         `profile__description--${status}`,
       )}>
-      I’m Harum, currently I live in Semarang, Indonesia. My projects include
+      I’m Harum, currently I live in Solo, Central Java, Indonesia. My projects include
       UX/UI design and Frontend development for web or mobile.
     </p>
     <p
