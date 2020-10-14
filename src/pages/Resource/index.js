@@ -137,7 +137,7 @@ export default function Resource() {
         title="Free E-Commerce UI Kit"
         description="This is free UI Kit for e-commerce. I hope it’s helpful."
         buttonText="Download Now"
-        buttonLink="bit.ly/FreebiesUIKit"
+        buttonLink="https://bit.ly/FreebiesUIKit"
         // buttonTo="/projects/smart-sparrow"
         image={{
           srcSet: `${ECommerce1x} 320w, ${ECommerce2x} 520w, ${ECommerce3x} 720w`,
